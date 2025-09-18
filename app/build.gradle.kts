@@ -58,6 +58,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation("com.mapbox.maps:android-ndk27:11.15.0")
     implementation("com.mapbox.extension:maps-compose-ndk27:11.15.0")
+    implementation("io.github.jan-tennert.supabase:auth-kt:3.2.3")
 
 
 }
