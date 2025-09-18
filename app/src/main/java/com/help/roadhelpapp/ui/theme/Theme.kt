@@ -1,15 +1,16 @@
 package com.help.roadhelpapp.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
+
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.ui.Modifier
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
@@ -33,26 +34,38 @@ private val LightColorScheme = lightColorScheme(
     */
 )
 
+
+val purple = Color(0xFFAF61E2)
+val darkPurple = Color(0xFF2D115A)
+val black = Color(0xFF010101)
+val darkGray = Color(0xFF1A1A1A)
+
 @Composable
-fun RoadHelpAppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
+fun SupabaseCourseTheme(
     content: @Composable () -> Unit
 ) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
 
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = DarkColorScheme,
         typography = Typography,
         content = content
     )
+}
+
+@Composable
+fun ThemePreview() {
+    SupabaseCourseTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Text("Tema Önizlemesi", color = MaterialTheme.colorScheme.primary)
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun PreviewTheme() {
+    ThemePreview()
 }
