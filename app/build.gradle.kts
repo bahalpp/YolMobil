@@ -58,9 +58,13 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
     implementation("com.mapbox.maps:android-ndk27:11.15.0")
     implementation("com.mapbox.extension:maps-compose-ndk27:11.15.0")
+
     implementation("io.github.jan-tennert.supabase:auth-kt:3.2.3")
     implementation(platform("io.github.jan-tennert.supabase:bom:3.2.3"))
-
+    implementation("io.ktor:ktor-client-okhttp:3.2.3")
+    implementation("androidx.credentials:credentials:1.6.0-alpha05")
+    implementation("androidx.credentials:credentials-play-services-auth:1.6.0-alpha05")
+    implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
 
 
 }
