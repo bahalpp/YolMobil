@@ -66,6 +66,8 @@ dependencies {
     implementation("androidx.credentials:credentials-play-services-auth:1.6.0-alpha05")
     implementation("com.google.android.libraries.identity.googleid:googleid:1.1.1")
 
+    // Navigation-Compose
+    implementation("androidx.navigation:navigation-compose:2.9.4")
 
 }
 
